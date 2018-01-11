@@ -1,4 +1,4 @@
-echo "install docker..."
+echo "Installing Docker..."
 apt-get update
 
 apt-get install -y \
@@ -15,7 +15,7 @@ apt-get update && apt-get install -y docker-ce=$(apt-cache madison docker-ce | g
 
 docker version
 
-echo "cgroup driver..."
+echo "Config cgroup driver used by kubelet..."
 cat << EOF > /etc/docker/daemon.json
 {
   "exec-opts": ["native.cgroupdriver=systemd"]
